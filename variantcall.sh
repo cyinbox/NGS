@@ -1,7 +1,7 @@
 #!/bin/bash
 # get SRA:./fastq-dump --split-files SRR1014703
-# Example usage: ./vcfcall.sh NC_007795.fasta SRR5617496_1.fastq SRR5617496_2.fastq
-# dos2unix -iso -n vcfcall0.sh vcfcall.sh
+# Example usage: ./variantcall2.sh NC_007795.fasta SRR5617496_1.fastq SRR5617496_2.fastq
+# dos2unix -iso -n variantcall.sh variantcall2.sh
 
 #Step 1: index the reference genome
 bwa index $1
