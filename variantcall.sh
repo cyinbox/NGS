@@ -1,5 +1,5 @@
 #!/bin/bash
-# get SRA:./fastq-dump --split-files SRR1014703
+# get SRA:./fastq-dump --split-files SRR5617496
 # Example usage: ./variantcall2.sh NC_007795.fasta SRR5617496_1.fastq SRR5617496_2.fastq
 # dos2unix -iso -n variantcall.sh variantcall2.sh
 
@@ -23,7 +23,7 @@ samtools sort genome.bam > genome_sorted.bam
 samtools index genome_sorted.bam
 
 #Step 7: create fasta sequence dictionary: the dictionary of the contig names and sizes 
-#java -jar picard.jar CreateSequenceDictionary REFERENCE=$1 OUTPUT=NC_007795.dict
+java -jar picard.jar CreateSequenceDictionary REFERENCE=$1 OUTPUT=NC_007795.dict
 
 #Step 8: add or read groups into the sorted bam file
 java -jar picard.jar AddOrReplaceReadGroups  I=genome_sorted.bam O=genome_sortedG.bam  RGID=4 RGLB=PtA02-T1 RGPL=IlluminaMiSeq  RGPU=unit1  RGSM=19
