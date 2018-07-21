@@ -35,7 +35,7 @@ java -jar picard.jar BuildBamIndex I=genome_sortedG.bam
 java -jar GenomeAnalysisTk.jar -T UnifiedGenotyper -R $1 -I genome_sortedG.bam  -o genome.vcf -filterMBQ
 
 #Step 11: coverage analysis
-#bedtools genomecov -ibam genome.bam -d>genome_coverage.txt
+bedtools genomecov -ibam genome.bam -d>genome_coverage.txt
 
 #Step 12: delete temp files
 rm genome.sam
