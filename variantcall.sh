@@ -42,5 +42,5 @@ rm genome.sam
 rm genome.bam
 rm genome_sorted.bam
 rm genome_sortedG.bam
-rm $2
-rm $3
+#rm $2
+#rm $3
