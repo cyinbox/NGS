@@ -1,6 +1,6 @@
-A B 0.18
-A C 0.12
-A D 0.15
-B C 0.55
-B D 0.14
-C D 0.92
+gene A, gen B, 0.18
+gene A, gene C, 0.12
+gene A, gene D, 0.15
+gene B, gene C, 0.55
+gene B, gene D, 0.14
+gene C, gene D, 0.92
