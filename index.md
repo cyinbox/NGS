@@ -25,6 +25,11 @@ Syntax highlighted code block
 
 [Link](url) and ![Image](src)
 ```
+Pysam:Python library sam IO
+http://pysam.readthedocs.io/en/latest/api.html#
+
+SeqAn:C++ library sam IO
+https://seqan.readthedocs.io/en/seqan-v2.0.2/index.html
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
