@@ -1,19 +1,23 @@
 #!/bin/bash
 # get SRA:./fastq-dump --split-files SRR5617496
-# Example usage: ./variantcall2.sh NC_007795.fasta SRR5617496_1.fastq SRR5617496_2.fastq
-# dos2unix -iso -n variantcall.sh variantcall2.sh
+#
+# Example usage: (reference genome, two pair-ends reads)
+# ./variantcall.sh NC_007795.fasta SRR5617496_1.fastq SRR5617496_2.fastq
+#
+# Remove windows-based newlines,spaces, etc in variantcall0.sh file
+# dos2unix -iso -n variantcall0.sh variantcall.sh 
 
 #Step 1: index the reference genome
 bwa index $1
 
-#Step 2: use BWA-MEM to align paired-end sequences. Briefly, the algorithm works by seeding alignments with
+#Step 2: use BWA-MEM to align paired-end sequences.
 bwa mem -M -t 16 $1 $2 $3 > genome.sam
 
 #picard uses faiindex and dictionary (steps 3-7) to access and safety check access to the reference files
 #Step 3: index the reference genome again for faindex, it allow efficient random access to the reference bases
 samtools faidx $1
 
-#Step 4: converte the sam file to a bam file for fast processing speed
+#Step 4: convert the sam file to a bam file for fast processing speed
 samtools view -S -b genome.sam > genome.bam
 
 #Step 5: sort the bam file
